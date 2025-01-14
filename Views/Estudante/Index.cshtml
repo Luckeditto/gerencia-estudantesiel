@@ -1,0 +1,87 @@
+﻿@model List<EstudanteModel>
+@{
+    ViewData["Title"] = "Listagem de Estudantes";
+}
+
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-primary" role="button" asp-controller="Estudante" asp-action="Cadastrar" >Novo</a>
+    </div>
+
+    <br />
+
+
+    @if(TempData["MensagemSucesso"] != null){
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+   
+    <br />
+   
+
+    <h1 class="display-4">Listagem de Estudantes</h1>
+
+    <table class="table" id="table-estudantes">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Data de Conclusão</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any()){
+                foreach (EstudanteModel estudante in Model)
+                {
+                    <tr>
+                        <th scope="row">@estudante.Id</th>
+                        <td>@estudante.Name</td>
+                        <td>@estudante.CPF</td>
+                        <td>@estudante.Endereco</td>
+                        <td>
+                            @if (DateTime.TryParse(estudante.DataConclusao, out DateTime dataConclusao))
+                            {
+                                @dataConclusao.ToString("dd/MM/yyyy")
+                            }
+                            else
+                            {
+                                @estudante.DataConclusao
+                                
+                            }
+                        
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@estudante.Id" asp-controller="Estudante" asp-action="Editar">Editar</a>
+                                <button role="button" class="btn btn-danger btn-excluir" data-bs-toggle="modal" data-bs-target="@("#modalExcluir-" + estudante.Id)" >Excluir</button>
+                            </div>
+                            @await Html.PartialAsync("_ExcluirConfirmacao", estudante)
+                        </td>
+                    </tr>
+
+                   
+                }
+            }
+
+        </tbody>
+
+    </table>
+</div>
+
+
+

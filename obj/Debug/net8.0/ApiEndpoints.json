@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "ControleDeEstudantes.Controllers.CpfApiController",
+    "Method": "VerificarCpfExistente",
+    "RelativePath": "api/CpfApi/existe",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cpf",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

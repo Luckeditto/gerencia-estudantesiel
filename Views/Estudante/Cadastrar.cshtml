@@ -1,0 +1,44 @@
+﻿@model EstudanteModel
+@{
+    ViewData["Title"] = "Cadastro de Estudante";
+}
+
+<div class="text-center">
+
+
+    <h1 class="display-4">Cadastrar Estudante</h1>
+
+</div>
+
+<form asp-controller="Estudante" asp-action="Cadastrar" method="post">
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" asp-for="Name" class="form-control" placeholder="Digite o nome do estudante">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" id="CPF" asp-for="CPF" class="form-control" placeholder="Digite o CPF">
+        <span asp-validation-for="CPF" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="endereco" class="form-label">Endereço</label>
+        <input type="text" asp-for="Endereco" class="form-control" placeholder="Digite o Endereço">
+        <span asp-validation-for="Endereco" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="dataconclusao" class="form-label">Data de Conclusão</label>
+        <input type="date" asp-for="DataConclusao" class="form-control" placeholder="">
+        <span asp-validation-for="DataConclusao" class="text-danger"></span>
+    </div>
+   
+    <div class="d-grid gap-2">
+    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+     <a class="btn btn-secondary btn-block" asp-controller="Estudante" asp-action="Index" role="button">Voltar</a>
+    </div>
+
+</form>

@@ -1,0 +1,19 @@
+﻿@model EstudanteModel
+
+<div class="modal fade" id="@("modalExcluir-" + Model.Id)" tabindex="-1" aria-labelledby="@("modalExcluirLabel-" + Model.Id)" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="@("modalExcluirLabel-" + Model.Id)">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                Tem certeza de que deseja excluir o estudante @Model.Name?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger" role="button" asp-route-id="@Model.Id" asp-controller="Estudante" asp-action="Excluir">Excluir</a>
+            </div>
+        </div>
+    </div>
+</div>
