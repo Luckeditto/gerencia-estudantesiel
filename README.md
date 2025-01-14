@@ -57,6 +57,28 @@ Este projeto é um sistema web para gerenciamento de cadastro de estudantes na I
 
 5.  **Execute o projeto.**
 
+  ## Capturas de Tela
+
+1.  **Tela de Listagem de Estudantes:**
+
+    ![Listagem de Estudantes](print2.png)
+
+2.  **Tela de Cadastro de Estudante:**
+
+    ![Cadastro de Estudante](print3.png)
+
+3.  **Tela de Cadastro de Estudante com validação em ação:**
+
+    ![Cadastro de Estudante com validação](print4.png)
+
+4.  **Tela de Confirmação de Exclusão:**
+
+    ![Confirmação de Exclusão](print5.png)
+
+5.  **Tela Inicial :**
+
+    ![Tela Inicial](print1.png)
+
 
 ## Contribuição
 
