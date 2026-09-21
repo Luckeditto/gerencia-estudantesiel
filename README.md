@@ -32,7 +32,7 @@ Este projeto é um sistema web para gerenciamento de cadastro de estudantes na I
 1.  **Clone o repositório:**
 
     ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+    git clone (https://github.com/Luckeditto/gerencia-estudantesiel.git)
     ```
 
 2.  **Abra a solução no Visual Studio ou Visual Studio Code.**
